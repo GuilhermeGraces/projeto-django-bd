@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início</title>
-</head>
-<body>
-    <nav>
-        <a href="{% url 'courses:home' %}">Início</a>
-        <a href="{% url 'courses:about' %}">Sobre</a>
-    </nav>
+{% extends "courses/base.html" %}
+
+{% block title %}Início{% endblock %}
+
+{% block content %}
     {% if user.is_authenticated %}
         <h1>Olá, {{ user.username }}!</h1>
     {% else %}
         <h1>Olá, visitante!</h1>
     {% endif %}
     <p>Bem-vindo ao sistema de cursos.</p>
-</body>
-</html>
+{% endblock %}

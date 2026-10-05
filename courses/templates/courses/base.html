@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Cursos{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'courses:home' %}">Início</a>
+        <a href="{% url 'courses:about' %}">Sobre</a>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+        <a href="{% url 'courses:home' %}">Teste</a>
+    </main>
+</body>
+</html>

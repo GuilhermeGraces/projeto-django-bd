@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre</title>
-</head>
-<body>
-    <nav>
-        <a href="{% url 'courses:home' %}">Início</a>
-        <a href="{% url 'courses:about' %}">Sobre</a>
-    </nav>
+{% extends "courses/base.html" %}
 
-    <h1>Sobre</h1>
-    <p>Sistema de cursos feito para estudar Django</p>
-</body>
-</html>
+{% block title %}Sobre{% endblock %}
+
+{% block content %}
+    <h1>Esta é a página Sobre</h1>
+    <p>Sobre o projeto e o curso</p>
+{% endblock %}
