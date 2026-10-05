@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início</title>
+    <title>Sobre</title>
 </head>
 <body>
     <nav>
         <a href="{% url 'courses:home' %}">Home</a>
         <a href="{% url 'courses:about' %}">Sobre</a>
     </nav>
-    {% if user.is_authenticated %}
-        <h1>Olá, {{ user.username }}!</h1>
-    {% else %}
-        <h1>Olá, visitante!</h1>
-    {% endif %}
-    <p>Bem-vindo ao sistema de cursos.</p>
+
+    <h1>Sobre</h1>
+    <p>Sistema de cursos feito para estudar Django</p>
 </body>
 </html>
