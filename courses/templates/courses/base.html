@@ -1,10 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Cursos{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'courses/css/style.css' %}">
 </head>
+
 <body>
     <nav>
         <a href="{% url 'courses:home' %}">Início</a>
@@ -16,4 +20,5 @@
         <a href="{% url 'courses:home' %}">Teste</a>
     </main>
 </body>
+
 </html>
