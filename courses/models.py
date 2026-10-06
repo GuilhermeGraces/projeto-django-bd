@@ -12,3 +12,29 @@ class Person(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+
+class Course(models.Model):
+    PERIOD_CHOICES = [
+        ("M", "Matutino"),
+        ("V", "Vespertino"),
+        ("N", "Noturno"),
+    ]
+
+    name = models.CharField(verbose_name="Nome do curso", max_length=100)
+    description = models.TextField(verbose_name="Descrição", blank=True)
+    workload = models.PositiveIntegerField(verbose_name="Carga horária (h)", default=0)
+    period = models.CharField(
+        verbose_name="Período",
+        max_length=1,
+        choices=PERIOD_CHOICES,
+        default="M",
+    )
+
+    class Meta:
+        verbose_name = "Curso"
+        verbose_name_plural = "Cursos"
+        ordering = ["name"]
+
+    def __str__(self):
+        return f"{self.name} {self.workload}h"
