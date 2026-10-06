@@ -30,6 +30,11 @@ class Course(models.Model):
         choices=PERIOD_CHOICES,
         default="M",
     )
+    teacher = models.ForeignKey(
+        Person,
+        on_delete=models.CASCADE,
+        verbose_name="Professor",
+    )
 
     class Meta:
         verbose_name = "Curso"
